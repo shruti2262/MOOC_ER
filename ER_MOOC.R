@@ -113,3 +113,11 @@ rmse <- function(actual, predicted){
 }
 rmse <- rmse(actual = datareq2$GrowthRate, predicted = prediction)
 rmse
+
+ggplot()  +
+  geom_line(data= datareq2, mapping= aes(x= seq(1,20), y= GrowthRate),color= "blue")+
+  geom_point(data= datareq2, mapping= aes(x= seq(1,20), y= GrowthRate),color= "blue")+
+  geom_line(data= datareq2, mapping= aes(x= seq(1,20),y= prediction), color= "red")+
+  geom_point(data= datareq2, mapping= aes(x= seq(1,20),y= prediction), color= "red")+ 
+  labs(x= "Quarters", y= "Actual_GrowthRate(Blue), Predicted_Growthrate(Red)")
+  
